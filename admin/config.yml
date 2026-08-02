@@ -1,0 +1,21 @@
+backend:
+  name: git-gateway
+  branch: main
+
+media_folder: "imagem"
+public_folder: "/img"
+
+collections:
+  - name: "noticias"
+    label: "Notícias"
+    folder: "_posts"
+    create: true
+    slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
+    fields:
+      - {label: "Título da Notícia", name: "title", widget: "string"}
+      - {label: "Data da Publicação", name: "date", widget: "datetime"}
+      - {label: "Nome do Editor", name: "author", widget: "string", default: "Max Gabriel Pereira Souza Benites"}
+      - {label: "Última Atualização", name: "updated_at", widget: "datetime", required: false}
+      - {label: "Foto ou Vídeo de Capa", name: "image", widget: "image", required: false}
+      - {label: "Texto da Notícia", name: "body", widget: "markdown"}
+      
